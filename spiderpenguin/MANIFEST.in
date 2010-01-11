@@ -1,0 +1,3 @@
+include spiderpenguin/config/deployment.ini_tmpl
+recursive-include spiderpenguin/public *
+recursive-include spiderpenguin/templates *
