@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>spiderPenguin - Web based tuxdroid remote control</title>
+        <link rel="stylesheet" type="text/css" href="/style.css" />
     </head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <body>
-	    <img src="images/tux.png" alt="tux" />
+        <img src="/images/tux.png" alt="tux" />
     </body>
 </html>

@@ -20,50 +20,55 @@ class MainController(BaseController):
         return render('/index.mako')
 
 
-    def spin(self, direction):
-        if direction == 'left':
-            pass
-        else:
-            pass
+    def spin(self, id):
+        if id == 'left':
+            tux.spinning.leftOn()
+        elif id == 'right':
+            tux.spinning.rightOn()
 
         # Return a rendered template
         return render('/index.mako')
 
 
-    def flippers(self, direction):
-        if direction == 'up':
-            pass
-        else:
-            pass
+    def flippers(self, id):
+        if id == 'up':
+            tux.flippers.up()
+        elif id == 'down':
+            tux.flippers.down()
 
         # Return a rendered template
         return render('/index.mako')
 
 
-    def eyes(self, action):
-        if action == 'open':
+    def eyes(self, id):
+        if id == 'open':
+            tux.eyes.open()
+        elif id == 'half':
             pass
-        elif action == 'half':
-            pass
-        else:
-            pass
+        elif id == 'closed':
+            tux.eyes.close()
 
         # Return a rendered template
         return render('/index.mako')
 
 
-    def led(self, action):
-        if action == 'on':
-            pass
-        elif action == 'off':
-            pass
-        else:
-            pass
+    def led(self, id):
+        eyes = request.GET.get('eyes', 'both')
+        if eyes not in ('both', 'left', 'right'):
+            eyes = 'both'
+        tux_eyes = getattr(tux.led, eyes)
+        if id == 'on':
+            tux_eyes.on()
+        elif id == 'off':
+            tux_eyes.off()
+        elif id == 'blink':
+            tux_eyes.blink()
 
         # Return a rendered template
         return render('/index.mako')
 
 
-    def speak(self, text):
+    def speak(self, id):
+        tux.tts.speak(id)
         # Return a rendered template
         return render('/index.mako')
