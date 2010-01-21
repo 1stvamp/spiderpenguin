@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 import logging
 
 from pylons import request, response, session, tmpl_context as c
@@ -5,8 +7,9 @@ from pylons.controllers.util import abort, redirect_to
 
 from spiderpenguin.lib.base import BaseController, render
 
-from tuxisalive.api.shell import *
+from spiderpenguin.lib.tuxsh import *
 from tuxisalive.api import SPV_VERYSLOW, SPV_SLOW, SPV_NORMAL, SPV_FAST, SPV_VERYFAST, LFX_NONE, LFX_FADE, LFX_STEP
+
 
 log = logging.getLogger(__name__)
 
