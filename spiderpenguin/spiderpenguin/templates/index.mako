@@ -8,6 +8,6 @@
     </head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <body>
-        <img src="tux.png" alt="Tuxdroid" />
+	    <img src="images/tux.png" alt="tux" />
     </body>
 </html>
